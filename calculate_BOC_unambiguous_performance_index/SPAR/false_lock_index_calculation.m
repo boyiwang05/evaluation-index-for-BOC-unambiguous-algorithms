@@ -5,7 +5,7 @@ clc;
 %正弦BOC参数
 c=CA_code(1);%得到CA码序列1
 L_CA=length(c);%CA码序列长度
-m=10;n=5;
+m=14;n=2;
 Rc=n*1.023e6;%码速率
 Tc=1/Rc;%码片长度
 f_sample=100e6;%采样频率
@@ -14,10 +14,10 @@ Tp=1e-3-T_sample;%相干积分时间1ms
 fs=m*1.023e6;
 Ts=1/fs/2;
 ALFA=1;
-Pulse_width=0.18;
+Pulse_width=0.05;
 %%
 %%%相关器间隔
-BW=30*1.023e6;d=0.1*Tc;%BOC(10,5)相关器间隔
+BW=36*1.023e6;d=0.03*Tc;VT_N=10;Dz=3.638e-4;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 N_BW=10000;
 f=linspace(-BW/2,BW/2,N_BW);
@@ -48,7 +48,7 @@ Trackerror=zeros(1,n_loop);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-Dz=3.671e-4;
+% Dz=3.671e-4;
 %%
 error_x=zeros(1,n_loop);
 error_y=zeros(1,n_loop);

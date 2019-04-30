@@ -5,7 +5,7 @@ clc;
 %正弦BOC参数
 c=CA_code(1);%得到CA码序列1
 L_CA=length(c);%CA码序列长度
-m=10;n=5;
+m=14;n=2;
 Rc=n*1.023e6;%码速率
 Tc=1/Rc;%码片长度
 f_sample=100e6;%采样频率
@@ -15,7 +15,7 @@ fs=m*1.023e6;
 Ts=1/fs/2;
 %%
 %%%相关器间隔
-BW=30*1.023e6;d_Subcarrier=0.1*Tc;d_code=Ts;%BOC(10,5)相关器间隔%shiyan2
+BW=36*1.023e6;d_Subcarrier=0.03*Tc;d_code=Ts;%BOC(14,2)相关器间隔%shiyan2
 Dz_code  = 7.509e-4;%K_code=5.3129
 Dz_Subcarrier  =1.3331e-4;%K_Subcarrier=29.9243
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

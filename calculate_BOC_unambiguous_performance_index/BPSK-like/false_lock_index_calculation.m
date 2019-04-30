@@ -5,7 +5,7 @@ clc;
 %正弦BOC参数
 c=CA_code(1);%得到CA码序列1
 L_CA=length(c);%CA码序列长度
-m=10;n=5;
+m=14;n=2;
 Rc=n*1.023e6;%码速率
 Tc=1/Rc;%码片长度
 f_sample=100e6;%采样频率
@@ -15,7 +15,7 @@ fs=m*1.023e6;
 Ts=1/fs/2;
 %%
 %%%相关器间隔
-BW=30*1.023e6;d=0.2*Tc;Dz  = 1.814e-3;%BOC(10,5)相关器间隔
+BW=4*1.023e6;d=0.5*Tc;Dz  = 8.785e-4;%BOC(10,5)相关器间隔
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 N_BW=10000;
 f=linspace(-BW/2,BW/2,N_BW);
@@ -27,7 +27,7 @@ C=1;%载波功率
 
 N_C=1;
 % C_N0_dB=linspace(20,45,N_C)-power_loss_filter_dB;
-C_N0_dB=45;
+C_N0_dB=48;
 C_N0=10.^(C_N0_dB/10);
 N0=C./C_N0;%单边噪声功率谱密度
 I_NoisePower=N0*BW*f_sample/BW;%在接收带宽内的噪声功率,因为在滤波后，噪声功率减为此处的BW/fsample，为了使滤波后噪声功率保持2N0*BW(射频变基带噪声谱密度变2倍)，在此处乘以fsample/BW
