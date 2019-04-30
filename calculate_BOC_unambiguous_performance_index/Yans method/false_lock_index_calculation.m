@@ -123,6 +123,7 @@ for m=1:Num_false_acquisition
         end
     end
     TrackErrSTD(m)=std(error_x);
+    error_recorder(m,:)=error_x;
     toc;
 end
 savefile='false_lock_index_yans_method_BOC_10_5_30M_01Tc_45dBHz.mat';

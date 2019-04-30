@@ -154,6 +154,7 @@ for m=1:Num_false_acquisition
         end
     end
     TrackErrSTD(m)=std(error_x);
+    error_recorder(m,:)=error_x;
    
     toc;
 end

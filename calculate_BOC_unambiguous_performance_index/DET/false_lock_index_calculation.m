@@ -132,6 +132,10 @@ for m=1:Num_false_acquisition
     subcarrier_TrackErrSTD(m)=std(error_Subcarrier_x);
     real_TrackErrSTD(m)=std(real_error);
     
+    error_code_recorder(m,:)=error_code_x;
+    error_Subcarrier_recorder(m,:)=error_Subcarrier_x;
+    real_error_recorder(m,:)=real_error;
+    
     toc;
 end
 savefile='false_lock_index_DET_BOC_10_5_30M_01Tc_45dBHz.mat';
